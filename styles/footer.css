@@ -56,6 +56,8 @@
 
 .socmed-icons i{
   color: #152C18;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
 }
 
 .links{
@@ -70,16 +72,33 @@
 .links a{
   font-weight: 600;
   color: #F8EBD3;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
 }
 
 .links div{
   border-bottom: 2px;
   border-bottom-color: #F8EBD3;
   border-bottom-style: solid;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
 }
 
 .aight{
   padding-top: 7px;
   font-size: 14px;
   color: #152C18;
+}
+
+.socmed-icons div a i:hover{
+  font-size: 24px;
+  color: #F8EBD3;
+  border-radius: 4px;
+}
+
+.links div a:hover{
+  color: #152C18;
+  border-bottom: 2px;
+  border-bottom-color: #152C18;
+  border-bottom-style: solid;
 }

@@ -51,12 +51,11 @@
 .nav-options nav ul li{
   display: inline-block;
   line-height: 30px;
-  padding: 5px;
   margin: 0 25px;
 }
 
 .nav-options i{
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 .divider {
@@ -69,8 +68,8 @@
 }
 
 .nav-options nav ul li a:hover{
-  font-size: 20px;
-  color: #BF8FA4;
-  background-color: #152C18;
+  font-size: 23px;
+  color: #803B3B;
+  /*background-color: #152C18;*/
   border-radius: 4px;
 }
