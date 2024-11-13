@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'tan-nimbus';
+  src: url('fonts/TAN-NIMBUS.otf') format('opentype'); 
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay';
+  src: url('fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* hide page scrollbar */
+html { scrollbar-width: none; }
+body { -ms-overflow-style: none; }
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
+
+.main-content{
+  background-color: #F8EBD3;
+  /*display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;*/
+  padding: 30px 50px;
+}
+
+.services{
+  font-family: tan-nimbus;
+  font-size: 36px;
+  color: #152C18;
+}
+
+.services h4{
+  font-size: 15px;
+  color: #803B3B;
+}
+
+.cart-btn{
+  font-size: 14px;
+  font-family: tan-nimbus;
+  color: #152C18;
+  background-color: #4B494980;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+  padding: 10px 20px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 0;
+
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+}
+
+.cart-btn:hover{
+  background-color: #83808080;
+}
+
+.categories{
+  background-color: #9F505F66;
+  padding: 10px 30px 30px 30px;
+
+  border-radius: 20px;
+
+  text-align: left;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.title{
+  margin-top: 30px;
+  font-size: 30px;
+  font-family: tan-nimbus;
+  font-weight: 700;
+  color: #803B3B;
+}
+
+.gourmet{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.gourmet button{
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 0;
+
+  padding: 10px 13px;
+
+  background-color: #607262;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.gourmet button:hover{
+  transform: translateY(-3%);
+  background-color: #7b947e;
+}
+
+.gourmet img{
+  border-radius: 10px;
+  width: 170px;
+}
+
+.gourmet button div{
+  color: #F8EBD3;
+  font-weight: 500;
+  font-size: 13px;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.price{
+  background-color: #152C18;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.gourmet .long-text{
+  font-size: 10px;
+}

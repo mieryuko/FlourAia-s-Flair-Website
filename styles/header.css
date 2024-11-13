@@ -35,7 +35,7 @@
 
 .nav-options nav ul li a{
   font-family: tan-nimbus;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 200;
   color: #152C18;
   /*display: inline-block;*/
@@ -68,7 +68,7 @@
 }
 
 .nav-options nav ul li a:hover{
-  font-size: 23px;
+  font-size: 19px;
   color: #803B3B;
   /*background-color: #152C18;*/
   border-radius: 4px;

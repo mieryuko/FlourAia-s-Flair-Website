@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'tan-nimbus';
-  src: url('fonts/Regards.otf') format('opentype'); 
+  src: url('fonts/TAN-NIMBUS.otf') format('opentype'); 
 }
 
 @font-face {
@@ -12,6 +12,12 @@
   padding: 0;
   margin: 0;
 }
+
+
+/* hide page scrollbar */
+html { scrollbar-width: none; }
+body { -ms-overflow-style: none; }
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
 
 .imgslider {
   position: relative;
@@ -116,7 +122,7 @@
 }
 
 .explore-menu{
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 200;
   font-family: tan-nimbus;
   color: #803B3B;
@@ -186,21 +192,23 @@
 }
 
 .view {
-  margin: 30px;
+  margin: 50px 0 30px 0;
   padding: 10px 30px;
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: #152C18;
   color: #F8EBD3;
-  font-size: 25px;
+  font-size: 20px;
+  font-style: italic;
   box-shadow: 3px 3px 10px #000000;
 
-  transition-duration: 300ms;
+  transition-duration: 250ms;
   transition-timing-function: ease-in;
 }
 
 .view:hover{
-  background-color: #BF8FA4;
+  background-color: #305234;
   font-weight: bold;
+  color: #F8EBD3;
 }
 
 .gallery {
