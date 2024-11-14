@@ -200,10 +200,13 @@ body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
   font-size: 20px;
   font-style: italic;
   box-shadow: 3px 3px 10px #000000;
-
   transition-duration: 250ms;
   transition-timing-function: ease-in;
 }
+
+ .view a{
+    color: #F8EBD3;
+ }
 
 .view:hover{
   background-color: #305234;
