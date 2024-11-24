@@ -270,7 +270,7 @@ body::-webkit-scrollbar-button {
 }
 
 .questions *{
-  font-family: sans-serif;
+  font-family: "PlayfairDisplay";
   color: #803b3b;
   font-size: 1.3rem;
 }

@@ -70,9 +70,11 @@
           What we offer
           <h4>Cookies | Brownies | Cakes</h4>
       </div>
+      <a href="cart.html" class="cart-btn">
       <div class="cart">
-        <button class="cart-btn"><i class='fas fa-cart-plus'></i></button>
+          <i class='fas fa-cart-plus'></i>
       </div>
+    </a>
     </div>
     <div class="categories">
       <!--COOKIES FRAME-->
@@ -104,7 +106,7 @@
             </button>
           </div>
           <div>
-            <button>
+            <button class="openOverlay" data-overlay="MatchaCookiesOverlay">
               <img src="imgs/matcha cookie.png" alt="">
               <div>
                 Matcha Cookies
@@ -115,7 +117,7 @@
             </button>
           </div>
           <div>
-            <button>
+            <button class="openOverlay" data-overlay="RedVelvetCookiesOverlay">
               <img src="imgs/red velvet.png" alt="">
               <div>
                 Red Velvet Cookies
@@ -126,7 +128,7 @@
             </button>
           </div>
           <div>
-            <button>
+            <button class="openOverlay" data-overlay="RedVelvetCrinklesOverlay">
               <img src="imgs/red velvet.png" alt="">
               <div class="long-text">
                 Red Velvet Crinkles w/ Cream<br/>Cheese Filling Cookies
@@ -137,7 +139,7 @@
             </button>
           </div>
           <div>
-            <button>
+            <button class="openOverlay" data-overlay="BYBCookiesOverlay">
               <img src="imgs/cookieya.png" alt="">
               <div>
                 Build your box!
@@ -155,29 +157,29 @@
       </div>
       <div class="gourmet">
         <div>
-          <button>
+          <button class="openOverlay" data-overlay="ClassicAlmondBrownieOverlay">
             <img src="imgs/classic almond.png" alt="">
             <div>
               Classic Almond Brownie
             </div>
             <div class = "price">
-              ₱310.00 - ₱380.00
+              ₱310.00 - ₱580.00
             </div>
           </button>
         </div>
         <div>
-          <button>
+          <button class="openOverlay" data-overlay="ClassicOGBrownieOverlay">
             <img src="imgs/classic og brownie.png" alt="">
             <div>
               Classic Brownie
             </div>
             <div class = "price">
-              ₱300.00 - ₱370.00
+              ₱300.00 - ₱570.00
             </div>
           </button>
         </div>
         <div>
-          <button>
+          <button class="openOverlay" data-overlay="BiscoffBrownieOverlay">
             <img src="imgs/biscoff brownie.png" alt="">
             <div>
               Biscoff Brownie
@@ -188,7 +190,7 @@
           </button>
         </div>
         <div>
-          <button>
+          <button class="openOverlay" data-overlay="ChocolateAlmondBrownieOverlay">
             <img src="imgs/chocolate almond.png" alt="">
             <div>
               Chocolate Almond Brownie
@@ -199,7 +201,7 @@
           </button>
         </div>
         <div>
-          <button>
+          <button class="openOverlay" data-overlay="BYBBrownieOverlay">
             <img src="imgs/brownieya.png" alt="">
             <div>
               Build your box!
@@ -215,7 +217,7 @@
       </div>
       <div class="gourmet">
         <div>
-          <button>
+          <button class="openOverlay" data-overlay="MinimalistCakeOverlay">
             <img src="imgs/classic almond.png" alt="">
             <div>
               Minimalist Cake
@@ -226,7 +228,7 @@
           </button>
         </div>
         <div>
-          <button>
+          <button class="openOverlay" data-overlay="StrawberryShortCakeOverlay">
             <img src="imgs/classic og brownie.png" alt="">
             <div>
               Strawberry Shortcake
@@ -237,7 +239,7 @@
           </button>
         </div>
         <div>
-          <button>
+          <button class="openOverlay" data-overlay="BentoCakeOverlay">
             <img src="imgs/biscoff brownie.png" alt="">
             <div>
               Bento Cake
@@ -248,7 +250,7 @@
           </button>
         </div>
         <div>
-          <button>
+          <button class="openOverlay" data-overlay="CupCakeOverlay">
             <img src="imgs/chocolate almond.png" alt="">
             <div>
               Cupcakes
@@ -259,7 +261,7 @@
           </button>
         </div>
         <div>
-          <button>
+          <button class="openOverlay" data-overlay="CustomizeCakeOverlay">
             <img src="imgs/brownieya.png" alt="">
             <div>
               Customize your cake!
@@ -274,24 +276,31 @@
   </div>
   
 <!--OVERLAYS-->
+  <!--COOKIES-->
   <!--Chocolate Chip Cookie-->
-  <div id="ChocoChipCookiesOverlay" class="overlay">
+  <div id="ChocoChipCookiesOverlay" class="overlay cookie-overlay">
     <div class=overlay-content>
-      <span class="close-btn">&times;</span>
       <div class="column">
         <div class="overlayImg">
           <img src="imgs/classic og cookie.png" alt="">
         </div>
         <p class="itemName">Chocolate Chip Cookies</p>
-        <p class="overlayprice">₱200.00 | 5 pcs in 1 box</p>
-        <p class="productDescription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, excepturi</p>
+        <p class="overlayprice">₱ <span class="productprice">220.00</span>  | 5 pcs in 1 box</p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
         <div class="counterRow">
           <button class="counterbtn" id="decrementBtn">-</button>
-          <p class="counter" id="counterValue">0</p>
+          <p class="counter" id="counterValue">1</p>
           <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs">
+              <option value="boxOf8" data-price="220">Box of 5 | 220.00</option>
+          </select>
         </div>
         <div class="row">
           <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
           <button class="OrderNow">Order Now</button>
         </div>
       </div>
@@ -301,25 +310,772 @@
   <!--Biscoff Cookie-->
   <div id="BiscoffCookiesOverlay" class="overlay">
     <div class=overlay-content>
-      <span class="close-btn">&times;</span>
       <div class="column">
         <div class="overlayImg">
           <img src="imgs/biscoff cookie.png" alt="">
         </div>
         <p class="itemName">Biscoff Cookies</p>
-        <p class="overlayprice">₱220.00 | 5 pcs in 1 box</p>
+        <p class="overlayprice">₱<span class="productprice">220.00</span> | 5 pcs in 1 box</p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
         <div class="counterRow">
           <button class="counterbtn" id="decrementBtn">-</button>
-          <p class="counter" id="counterValue">0</p>
+          <p class="counter" id="counterValue">1</p>
           <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs">
+              <option value="boxOf8" data-price="220">Box of 5 | 220.00</option>
+          </select>
         </div>
         <div class="row">
           <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
           <button class="OrderNow">Order Now</button>
         </div>
       </div>
     </div>
   </div>
+
+  <!--Matcha Cookie-->
+  <div id="MatchaCookiesOverlay" class="overlay">
+    <div class=overlay-content>
+      <div class="column">
+        <div class="overlayImg">
+          <img src="imgs/matcha cookie.png" alt="">
+        </div>
+        <p class="itemName">Matcha Cookies</p>
+        <p class="overlayprice">₱<span class="productprice">220.00</span> | 5 pcs in 1 box</p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs">
+              <option value="boxOf8" data-price="220">Box of 5 | 220.00</option>
+          </select>
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Red Velvet Cookies Cookie-->
+  <div id="RedVelvetCookiesOverlay" class="overlay">
+    <div class=overlay-content>
+      <div class="column">
+        <div class="overlayImg">
+          <img src="imgs/red velvet.png" alt="">
+        </div>
+        <p class="itemName">Red Velvet Cookies</p>
+        <p class="overlayprice">₱<span class="productprice">220.00</span> | 5 pcs in 1 box</p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs">
+              <option value="boxOf8" data-price="220">Box of 5 | 220.00</option>
+          </select>
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Red velvet crinkles Cookie-->
+  <div id="RedVelvetCrinklesOverlay" class="overlay">
+    <div class=overlay-content>
+      <div class="column">
+        <div class="overlayImg">
+          <img src="imgs/red velvet.png" alt="">
+        </div>
+        <p class="itemName">Red Velvet Cookies</p>
+        <p class="overlayprice">₱<span class="productprice">220.00</span> | 5 pcs in 1 box</p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs">
+              <option value="boxOf8" data-price="220">Box of 5 | 220.00</option>
+          </select>
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Build your box Cookie-->
+  <div id="BYBCookiesOverlay" class="overlay" data-is-build-your-box="true">
+    <div class=overlay-content>
+      <div class="column">
+        <div class="overlayImg">
+          <img src="imgs/cookieya.png" alt="">
+        </div>
+        <p class="itemName">Build your box Cookies</p>
+        <p class="overlayprice">₱<span class="productprice">220.00</span> | 5 pcs in 1 box</p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs">
+              <option value="boxOf8" data-price="220">Box of 5 | 220.00</option>
+          </select>
+        </div>
+        <!-- Flavor Dropdowns -->
+        <div class="selection">
+          <label for="flavor1">Select Flavor 1:</label>
+          <select id="flavor1">
+              <option value="Chocolate Chip">Chocolate Chip</option>
+              <option value="Matcha">Matcha</option>
+              <option value="Biscoff">Biscoff</option>
+              <option value="Red Velvet">Red Velvet</option>
+          </select>
+          
+          <label for="flavor2">Select Flavor 2:</label>
+          <select id="flavor2">
+              <option value="Chocolate Chip">Chocolate Chip</option>
+              <option value="Matcha">Matcha</option>
+              <option value="Biscoff">Biscoff</option>
+              <option value="Red Velvet">Red Velvet</option>
+          </select>
+          
+          <label for="flavor3">Select Flavor 3:</label>
+          <select id="flavor3">
+              <option value="Chocolate Chip">Chocolate Chip</option>
+              <option value="Matcha">Matcha</option>
+              <option value="Biscoff">Biscoff</option>
+              <option value="Red Velvet">Red Velvet</option>
+          </select>
+          
+          <label for="flavor4">Select Flavor 4:</label>
+          <select id="flavor4">
+              <option value="Chocolate Chip">Chocolate Chip</option>
+              <option value="Matcha">Matcha</option>
+              <option value="Biscoff">Biscoff</option>
+              <option value="Red Velvet">Red Velvet</option>
+          </select>
+          
+          <label for="flavor5" >Select Flavor 5:</label>
+          <select id="flavor5">
+              <option value="Chocolate Chip">Chocolate Chip</option>
+              <option value="Matcha">Matcha</option>
+              <option value="Biscoff">Biscoff</option>
+              <option value="Red Velvet">Red Velvet</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--BROWNIES-->
+  <!--Classic Almond Brownie-->
+  <div id="ClassicAlmondBrownieOverlay" class="overlay brownie-overlay">
+    <div class=overlay-content>
+      <div class="column">
+        <div class="overlayImg">
+          <img src="imgs/classic almond.png" alt="">
+        </div>
+        <p class="itemName">Classic Almond Brownie</p>
+        <p class="overlayprice"><span class="productprice" id="productprice">310.00</span></p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs">
+              <option value="boxOf8" data-price="310">Box of 8 | ₱310.00</option>
+              <option value="boxOf16" data-price="580">Box of 16 | ₱580.00</option>
+          </select>
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Classic OG Brownie-->
+  <div id="ClassicOGBrownieOverlay" class="overlay brownie-overlay">
+    <div class=overlay-content>
+      <div class="column">
+        <div class="overlayImg">
+          <img src="imgs/classic og brownie.png" alt="">
+        </div>
+        <p class="itemName">Classic Brownie</p>
+        <p class="overlayprice"><span class="productprice" id="productprice">300.00</span></p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs">
+              <option value="boxOf8" data-price="300">Box of 8 | ₱300.00</option>
+              <option value="boxOf16" data-price="570">Box of 16 | ₱570.00</option>
+          </select>
+      </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Biscoff Brownie-->
+  <div id="BiscoffBrownieOverlay" class="overlay brownie-overlay">
+    <div class=overlay-content>
+      <div class="column">
+        <div class="overlayImg">
+          <img src="imgs/biscoff brownie.png" alt="">
+        </div>
+        <p class="itemName">Biscoff Brownie</p>
+        <p class="overlayprice"><span class="productprice" id="productprice">330.00</span></p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs">
+              <option value="boxOf8" data-price="330">Box of 8 | ₱330.00</option>
+              <option value="boxOf16" data-price="650">Box of 16 | ₱650.00</option>
+          </select>
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Chocolate Almond Brownie-->
+    <div id="ChocolateAlmondBrownieOverlay" class="overlay brownie-overlay">
+      <div class=overlay-content>
+        <div class="column">  
+          <div class="overlayImg">
+            <img src="imgs/chocolate almond.png" alt="">
+          </div>
+          <p class="itemName">Chocolate Almond Brownie</p>
+          <p class="overlayprice"><span class="productprice" id="productprice">320.00</span></p>
+          <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+          <div class="counterRow">
+            <button class="counterbtn" id="decrementBtn">-</button>
+            <p class="counter" id="counterValue">1</p>
+            <button class="counterbtn" id="incrementBtn">+</button>
+          </div>
+          <div class="box-selection">
+            <label for="boxes">Select Box:</label>
+            <select class="boxOfs" id="boxSelection">
+                <option value="boxOf8" data-price="320">Box of 8 | ₱320.00</option>
+                <option value="boxOf16" data-price="620">Box of 16 | ₱620.00</option>
+            </select>
+          </div>
+          <div class="row">
+            <button class="AddToCart">Add to Cart</button>
+            <span class="close-btn">&times;</span>
+            <button class="OrderNow">Order Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!--Build your box brownies Brownie-->
+  <div id="BYBBrownieOverlay" class="overlay brownie-overlay" data-is-build-your-box="true">
+    <div class=overlay-content>
+      <div class="column">  
+        <div class="overlayImg">
+          <img src="imgs/brownieya.png" alt="">
+        </div>
+        <p class="itemName">Build you box of brownies</p>
+        <p class="overlayprice"><span class="productprice" id="productprice">330.00</span></p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs">
+              <option value="boxOf8" data-price="330">Box of 8 | ₱330.00</option>
+              <option value="boxOf16" data-price="650">Box of 16 | ₱650.00</option>
+          </select>
+        </div>
+        <div class="selection">
+          <label for="flavor1">Select Flavor 1:</label>
+          <select id="flavor1">
+              <option value="Classic Almond">Classic Almond</option>
+              <option value="Classic OG">Classic OG</option>
+              <option value="Biscoff">Biscoff</option>
+              <option value="Chocolate Almond">Chocolate Almond</option>
+          </select>
+          
+          <label for="flavor2">Select Flavor 2:</label>
+          <select id="flavor2">
+            <option value="Classic Almond">Classic Almond</option>
+            <option value="Classic OG">Classic OG</option>
+            <option value="Biscoff">Biscoff</option>
+            <option value="Chocolate Almond">Chocolate Almond</option>
+          </select>
+          
+          <label for="flavor3">Select Flavor 3:</label>
+          <select id="flavor3">
+            <option value="Classic Almond">Classic Almond</option>
+            <option value="Classic OG">Classic OG</option>
+            <option value="Biscoff">Biscoff</option>
+            <option value="Chocolate Almond">Chocolate Almond</option>
+          </select>
+          
+          <label for="flavor4">Select Flavor 4:</label>
+          <select id="flavor4">
+            <option value="Classic Almond">Classic Almond</option>
+            <option value="Classic OG">Classic OG</option>
+            <option value="Biscoff">Biscoff</option>
+            <option value="Chocolate Almond">Chocolate Almond</option>
+          </select>
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--CAKES-->
+  <!--Minimalist Cake Brownie-->
+  <div id="MinimalistCakeOverlay" class="overlay cake-overlay">
+    <div class=overlay-content>
+      <div class="column">  
+        <div class="overlayImg">
+          <img src="imgs/chocolate almond.png" alt="">
+        </div>
+        <p class="itemName">Minimalist Cake</p>
+        <p class="overlayprice"><span class="productprice" id="productprice">999.00</span></p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs" id="boxOfs">
+              <option value="boxOf8" data-price="999">6 x 4" | ₱999.00</option>
+              <option value="boxOf16" data-price="1300">8 x 4" | ₱1300.00</option>
+          </select>
+        </div>
+        <div class="selection">
+            <label for="cakebase">Cake Base:</label>
+            <select id="cakebase">
+                <option value="option1">Chocolate Moist Cake Base</option>
+                <option value="option2">Chiffon Cake Base</option>
+            </select>
+
+            <label for="flavor">Flavor:</label>
+            <select id="flavor">
+                <option value="option1">Chocolate</option>
+            </select>
+
+            <label for="filling">Filling:</label>
+            <select id="filling">
+                <option value="option1">Chocolate Ganache</option>
+                <option value="option2">Caramel Filling</option>
+            </select>
+
+            <div id="colorDropdowns" class="colorDropdowns">
+                <div class="color-dropdowns">
+                    <label for="options">Frosting color:</label>
+                    <select class="color-select">
+                        <option value="red">White</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="hidden box-selection">
+                      <label for="otherInput">Other color:</label>
+                      <input type="text" class="other-input input-other-color" placeholder="Type a color...">
+                    </div>
+                </div>
+            </div>
+            <button id="addColorButton" class="button-add-color">Add Color</button>
+            <br>
+            <div class="image-upload">
+              <label for="imageInput">Have an inspo? Upload your image:</label>
+              <input type="file" id="imageInput" class="image-input" accept="image/*">
+            </div>
+          </div>
+          <div class="userNote">
+            <label for="userNote">Note to the baker:</label>
+            <input type="text" id="userNote" accept="text">
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Strawberry ShortCake -->
+  <div id="StrawberryShortCakeOverlay" class="overlay cake-overlay">
+    <div class=overlay-content>
+      <div class="column">  
+        <div class="overlayImg">
+          <img src="imgs/chocolate almond.png" alt="">
+        </div>
+        <p class="itemName">Strawberry ShortCake</p>
+        <p class="overlayprice"><span class="productprice" id="productprice">1300.00</span></p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs" id="boxOfs">
+              <option value="boxOf8" data-price="1300">6 x 4" | ₱1300.00</option>
+              <option value="boxOf16" data-price="1800">8 x 4" | ₱1800.00</option>
+          </select>
+        </div>
+        <div class="selection">
+            <label for="cakebase">Cake Base:</label>
+            <select id="cakebase">
+                <option value="option1">Chocolate Moist Cake Base</option>
+                <option value="option2">Chiffon Cake Base</option>
+            </select>
+
+            <label for="flavor">Flavor:</label>
+            <select id="flavor">
+                <option value="option1">Vanilla Chiffon</option>
+            </select>
+
+            <label for="filling">Filling:</label>
+            <select id="filling">
+                <option value="fillingflavor">Strawberry Flavored</option>
+            </select>
+
+            <div id="colorDropdowns" class="colorDropdowns">
+                <div class="color-dropdowns">
+                    <label for="options">Frosting color:</label>
+                    <select class="color-select">
+                        <option value="white">White</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="other">Other</option>
+                    </select>
+                    
+                    <div class="hidden box-selection">
+                      <label for="otherInput">Other color:</label>
+                      <input type="text" class="other-input input-other-color" placeholder="Type a color...">
+                    </div>
+                </div>
+            </div>
+            <button id="addColorButton" class="button-add-color">Add Color</button>
+            <br>
+            <div class="image-upload">
+              <label for="imageInput">Have an inspo? Upload your image:</label>
+              <input type="file" id="imageInput" class="image-input" accept="image/*">
+            </div>
+          </div>
+          <div class="userNote">
+            <label for="userNote">Note to the baker:</label>
+            <input type="text" id="userNote" accept="text">
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Bento Cake -->
+  <div id="BentoCakeOverlay" class="overlay cake-overlay">
+    <div class=overlay-content>
+      <div class="column">  
+        <div class="overlayImg">
+          <img src="imgs/chocolate almond.png" alt="">
+        </div>
+        <p class="itemName">Bento Cake</p>
+        <p class="overlayprice"><span class="productprice" id="productprice">300.00</span></p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Ad-On:</label>
+          <select id="boxOfs" class="boxOfs">
+              <option value="boxOf8" data-price="300">None</option>
+              <option value="boxOf16" data-price="380">With 2 Cupcakes | ₱380.00</option>
+          </select>
+        </div>
+        <div class="selection">
+            <label for="cakebase">Cake Base:</label>
+            <select id="cakebase">
+                <option value="option1">Chocolate Moist Cake Base</option>
+                <option value="option2">Chiffon Cake Base</option>
+            </select>
+
+            <label for="flavor">Flavor:</label>
+            <select id="flavor">
+                <option value="option1">Vanilla Chiffon</option>
+            </select>
+
+            <label for="filling">Filling:</label>
+            <select id="filling">
+              <option value="chocoganache">Chocolate Ganache</option>
+              <option value="carefilling">Caramel Filling</option>
+            </select>
+
+            <div id="colorDropdowns" class="colorDropdowns">
+                <div class="color-dropdowns">
+                    <label for="options">Frosting color:</label>
+                    <select class="color-select">
+                        <option value="white">White</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="other">Other</option>
+                    </select>
+                    
+                    <div class="hidden box-selection">
+                      <label for="otherInput">Other color:</label>
+                      <input type="text" class="other-input input-other-color" placeholder="Type a color...">
+                    </div>
+                </div>
+            </div>
+            <button id="addColorButton" class="button-add-color">Add Color</button>
+            <br>
+            <div class="image-upload">
+              <label for="imageInput">Have an inspo? Upload your image:</label>
+              <input type="file" id="imageInput" class="image-input" accept="image/*">
+            </div>
+          </div>
+          <div class="userNote">
+            <label for="userNote">Note to the baker:</label>
+            <input type="text" id="userNote" accept="text">
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Cupcake Cake -->
+  <div id="CupCakeOverlay" class="overlay cupcake-overlay">
+    <div class=overlay-content>
+      <div class="column">  
+        <div class="overlayImg">
+          <img src="imgs/chocolate almond.png" alt="">
+        </div>
+        <p class="itemName">Cupcake</p>
+        <p class="overlayprice"><span class="productprice" id="productprice">350.00</span></p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+
+        <div class="box-selection">
+          <label for="boxes">Ad-On:</label>
+          <select id="boxOfs" class="boxOfs">
+              <option value="boxOf6" data-price="350">Box of 6</option>
+          </select>
+        </div>
+
+        <div class="selection">
+            <label for="cakebase">Cake Base:</label>
+            <select id="cakebase">
+                <option value="option2">Chocolate Moist Cake Base</option>
+                <option value="option2">Chiffon Cake Base</option>
+            </select>
+
+            <label for="flavor">Flavor:</label>
+            <select id="flavor">
+                <option value="option1">Chocolate</option>
+            </select>
+
+            <label for="filling">Filling:</label>
+            <select id="filling">
+                <option value="fillingflavor">Chocolate Ganache</option>
+                <option value="fillingflavor1">Caramel Filling</option>
+            </select>
+
+            <div id="colorDropdowns" class="colorDropdowns">
+                <div class="color-dropdowns">
+                    <label for="options">Frosting color:</label>
+                    <select class="color-select">
+                        <option value="white">White</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="other">Other</option>
+                    </select>
+                    
+                    <div class="hidden box-selection">
+                      <label for="otherInput">Other color:</label>
+                      <input type="text" class="other-input input-other-color" placeholder="Type a color...">
+                    </div>
+                </div>
+            </div>
+            <button id="addColorButton" class="button-add-color">Add Color</button>
+            <br>
+            <div class="image-upload">
+              <label for="imageInput">Have an inspo? Upload your image:</label>
+              <input type="file" id="imageInput" class="image-input" accept="image/*">
+            </div>
+          </div>
+          <div class="userNote">
+            <label for="userNote">Note to the baker:</label>
+            <input type="text" id="userNote" accept="text">
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Customize Cake Brownie-->
+  <div id="CustomizeCakeOverlay" class="overlay cake-overlay">
+    <div class=overlay-content>
+      <div class="column">  
+        <div class="overlayImg">
+          <img src="imgs/chocolate almond.png" alt="">
+        </div>
+        <p class="itemName">Customize Your Cake</p>
+        <p class="overlayprice"><span class="productprice" id="productprice">1200.00</span></p>
+        <p class="itemDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus in porro laudantium</p>
+        <div class="counterRow">
+          <button class="counterbtn" id="decrementBtn">-</button>
+          <p class="counter" id="counterValue">1</p>
+          <button class="counterbtn" id="incrementBtn">+</button>
+        </div>
+        <div class="box-selection">
+          <label for="boxes">Select Box:</label>
+          <select class="boxOfs" id="boxOfs ">
+              <option value="boxOf8" data-price="1200">6 x 4" | ₱1200.00</option>
+              <option value="boxOf16" data-price="1400">8 x 4" | ₱1400.00</option>
+          </select>
+        </div>
+        <div class="selection">
+            <label for="cakebase">Cake Base:</label>
+            <select id="cakebase">
+                <option value="option1">Chocolate Moist Cake Base</option>
+                <option value="option2">Chiffon Cake Base</option>
+            </select>
+
+            <label for="flavor">Flavor:</label>
+            <select id="flavor">
+                <option value="option1">Chocolate</option>
+            </select>
+
+            <label for="filling">Filling:</label>
+            <select id="filling">
+                <option value="option1">Chocolate Ganache</option>
+                <option value="option2">Caramel Filling</option>
+            </select>
+
+            <div id="colorDropdowns" class="colorDropdowns">
+                <div class="color-dropdowns">
+                    <label for="options">Frosting color:</label>
+                    <select class="color-select">
+                        <option value="red">White</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="other">Other</option>
+                    </select>
+                    
+                    <div class="hidden box-selection">
+                      <label for="otherInput">Other color:</label>
+                      <input type="text" class="other-input input-other-color" placeholder="Type a color...">
+                    </div>
+                </div>
+            </div>
+            <button id="addColorButton" class="button-add-color">Add Color</button>
+            <br>
+            <div class="image-upload">
+              <label for="imageInput">Have an inspo? Upload your image:</label>
+              <input type="file" id="imageInput" class="image-input" accept="image/*">
+            </div>
+          </div>
+          <div class="userNote">
+            <label for="userNote">Note to the baker:</label>
+            <input type="text" id="userNote" accept="text">
+        </div>
+        <div class="row">
+          <button class="AddToCart">Add to Cart</button>
+          <span class="close-btn">&times;</span>
+          <button class="OrderNow">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--FOOTER-->
   <footer class="footer-container">
     <div class="socmed">
       <div class="logo"><img src="imgs/logo.png" alt=""></div>
@@ -352,5 +1108,10 @@
       <i class='far fa-copyright'></i> 2024 Aia's Flair. All Rights Reserved.
     </div>
   </footer>
+  <script>
+
+    
+</script>
+
 </body>
 </html>
