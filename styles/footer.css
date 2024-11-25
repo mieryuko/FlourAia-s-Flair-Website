@@ -102,3 +102,22 @@
   border-bottom-color: #152C18;
   border-bottom-style: solid;
 }
+
+/*responsiveness*/
+@media (max-width: 430px){
+  .socmed .logo img{
+    width: 60px;
+  }
+
+  .socmed-text{
+    font-size: 13px;
+  }
+
+  .socmed-icons div a i{
+    font-size: 5px;
+  }
+
+  .links{
+    font-size: 13px;
+  }
+}

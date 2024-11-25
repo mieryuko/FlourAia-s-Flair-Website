@@ -289,6 +289,9 @@ body::-webkit-scrollbar-button {
 .questions .answer{
   padding: 20px;
 }
+
+/*responsiveness*/
+
 @media (max-width: 768px) {
   .glassmorphism .aia {
     font-size: 2.7vw;
@@ -319,5 +322,29 @@ body::-webkit-scrollbar-button {
   .gallery-item {
     grid-column: span 1;
     grid-row: span 1;
+  }
+}
+/*categories*/
+@media (max-width: 430px){
+  .category-text{
+    font-size: 19px;
+  }
+
+  .explore-menu{
+    font-size: 12px;
+  }
+
+  .cookies-img {
+    width: 240px;
+    height: 130px;
+  }
+
+  .options{
+    font-size: 17px;
+  }
+
+  .view{
+    font-size: 15px;
+    margin: 30px 0 30px 0;
   }
 }
