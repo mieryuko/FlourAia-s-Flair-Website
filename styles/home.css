@@ -217,9 +217,9 @@ body::-webkit-scrollbar-button {
   transition-timing-function: ease-in;
 }
 
- .view a{
-    color: #F8EBD3;
- }
+.view a {
+  color: #f8ebd3;
+}
 
 .view:hover {
   background-color: #305234;
@@ -269,26 +269,60 @@ body::-webkit-scrollbar-button {
   justify-content: center;
 }
 
-.questions *{
+.questions * {
   font-family: "PlayfairDisplay";
   color: #803b3b;
   font-size: 1.3rem;
 }
 
-.questions li{
+.questions li {
   list-style: decimal;
   font-size: 1.7rem;
   font-weight: 700;
   padding: 20px;
-  
 }
 
-.questions ol{
+.questions ol {
   padding: 50px;
 }
-.questions .answer{
-  padding: 20px;
+.questions .answer {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-left: 20px;
+  transition: height 0.3s ease;
+  transition: opacity 0.3s ease;
 }
+.answer.active {
+  height: auto;
+  opacity: 100;
+  padding-top: 20px;
+}
+.question-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 2.3rem;
+  font-size: 1.2rem;
+  align-items: center;
+  padding: 5px;
+}
+
+.question-btn:hover{
+  background-color:#803b3b;
+  .chevron{
+    color:#f8ebd3;
+  }
+}
+
+.question-btn .chevron{
+  display: block;
+  transition: transform 0.3s ease;
+}
+.question-btn .chevron.rotate{
+  transform: rotate(-180deg);
+}
+
 @media (max-width: 768px) {
   .glassmorphism .aia {
     font-size: 2.7vw;
