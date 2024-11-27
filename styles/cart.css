@@ -1,0 +1,358 @@
+@font-face {
+    font-family: 'tan-nimbus';
+    src: url('fonts/TAN-NIMBUS.otf') format('opentype'); 
+  }
+  
+  @font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Regards';
+    src: url('fonts/Regards.otf') format('truetype');
+  }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+}
+
+.main-content {
+    background-color: #F8EBD3; 
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    max-height: 100vh;
+    width: 100%; 
+    padding: 20px; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw; 
+    max-height: 80vh; 
+ 
+    padding: 30px 10%; 
+    width: 100%; 
+}
+
+.cart{
+    overflow-y: auto;
+    scrollbar-width: none;
+    max-height: 80vh;
+    max-width: 80vw;
+}
+
+.continueShopping{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    background-color: #bf8fa4;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 50px;
+    transition:0.3s ease; /* Transition for background color change */
+
+}
+.continueShopping span{
+    color: #152C18;
+    filter: brightness(1);
+    font-weight: bold;
+    font-size: 1em;
+}
+.continueShopping:hover{
+    box-shadow: 0px 2px 5px  rgba(0, 0, 0, 0.5);
+}
+
+a:visited{
+    color: #F8EBD3;
+}
+
+.cart-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+    background-color: #F8EBD3; 
+    overflow-y: auto; 
+}
+
+.cart-table thead {
+    position: sticky;
+    top: 0; 
+    background-color: #F8EBD3; 
+    z-index: 10; 
+
+}
+
+
+.cart-table th, .cart-table td {
+    border-bottom: 2px solid #9F505F; 
+    padding: 5px; 
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease; 
+}
+
+.cart-table th{
+    font-weight: lighter;
+    font-size: 20px;
+    font-family: 'PlayFairDisplay';
+    font-weight: bolder;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none; 
+}
+
+.itemImg{
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-checkbox span {
+    position: relative;
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid #BF8FA4; 
+    border-radius: 3px; 
+    background-color: white; 
+    transition: background-color 0.2s ease; 
+    display: inline-block; 
+    margin-right: 8px; 
+}
+
+
+.custom-checkbox input[type="checkbox"]:checked + span {
+    background-color: #9F505F; 
+    border-color: #BF8FA4; 
+}
+
+
+.text-right{
+    font-weight: 700; 
+    font-size: 18px; 
+    font-family: 'PlayfairDisplay';
+    color: #152C18;
+    align-items: center;
+    justify-content: center;
+}
+
+.counterbtn{
+    font-size: 15px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 25px; 
+    height: 25px;  
+    background: #152C18;
+    color: #F8EBD3;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.counterbtn:hover{
+    background: #607262;
+    color: black;
+}
+
+
+
+.placeOrder {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: flex-end; 
+    margin-top: auto; 
+    padding: 10px; 
+}
+
+.remove-item {
+    margin: 5px; 
+    padding: 10px;
+    font-size: 16px;
+    height: 40px; 
+    width: auto; 
+    text-align: center; 
+    border: none; 
+    border-radius: 35px; 
+    cursor: pointer; 
+    box-sizing: border-box; 
+    background-color: darkred; 
+    color: #F8EBD3; 
+    transition: background-color 0.3s ease; 
+}
+
+.remove-item:hover {
+    color: black;
+    background-color: red; 
+    cursor: pointer; 
+}
+
+.placeOrder{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: #152C18;
+    font-size: 1.4em;
+}
+
+.placeOrderButton{
+    background-color: #9F505F;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    height: 6vh;
+    font-size: .8em;
+    font-weight: bolder;
+    color: #F8EBD3;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, 0.4s ease;
+}
+
+.placeOrderButton:hover{
+    background-color: #BF8FA4;
+    color: black;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.toggle-flavors {
+    min-width: 100px;
+    max-height: 100px;
+    border-radius: 10px;
+    background-color: #bf8fa4;
+    border: none;
+    font-family: 'PlayfairDisplay';
+    font-size: 10px;
+    position: relative; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: box-shadow 0.3s ease;
+}
+
+.toggle-flavors:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0)
+}
+
+.flavors-list {
+    max-height: 0; 
+    opacity: 0; 
+    overflow: hidden; 
+    transition: max-height 0.5s ease, opacity 0.2s ease; 
+    background-color: #bf8fa4;
+    font-size: 13px;
+    font-family: 'PlayfairDisplay';
+    min-width: 40%; 
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute; 
+    top: 100%; 
+    left: auto; 
+    z-index: 11;
+}
+
+.flavors-list.show {
+    max-height: 500px; 
+    opacity: 1; 
+    overflow: visible; 
+}
+
+.flavor {
+    padding: 1px;
+}
+
+.buildYourBoxText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding-bottom: 2px;
+    position: relative;
+    z-index: 10;
+}
+
+.detailsButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .continueShopping{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 25vw;
+    }
+
+    .cart-table {
+        display: block; 
+        overflow-x: auto; 
+        align-items: center;
+        background-color: #9F505F;
+    }
+
+    .cart-table thead {
+        display: none; 
+    }
+
+    .cart-table tbody{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .cart-table tr {
+        display: flex; 
+        flex-direction: column; 
+        margin-bottom: 10px; 
+        border: 10px double #F8EBD3; 
+        padding: 10px; 
+        justify-content: center;
+        align-items: center;
+        width: 85vw;
+        min-width: 40vw;
+    }
+
+    .cart-table td {
+        display: flex; 
+        justify-content: space-between; 
+        border: none; 
+        padding: 5px 0; 
+    }
+
+    .cart-table td::before {
+        content: attr(data-label); 
+        font-weight: bold; 
+        margin-right: 10px; 
+    }
+
+    .text-right{
+        color: #F8EBD3;
+    }
+    
+    .placeOrderButton{
+        font-size: .6em;
+    }
+}
