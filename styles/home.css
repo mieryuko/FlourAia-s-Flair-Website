@@ -368,6 +368,18 @@ body::-webkit-scrollbar-button {
   grid-column: span 3;
 }
 
+/*QUOTE*/
+.quote{
+  height: calc(100vh - 130px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quote-text{
+  font-size: 3rem;
+}
+
+/*FAQ*/
 .faq {
   background-color: #f8ebd3;
   padding: 20px;
