@@ -301,6 +301,10 @@ body::-webkit-scrollbar-button {
   align-items: center;
 }
 
+.category-text.faq-text{
+  text-align: center;
+}
+
 .faq-content * {
   color: #803b3b;
   font-size: 1.3rem;
@@ -323,6 +327,7 @@ body::-webkit-scrollbar-button {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .answer {
