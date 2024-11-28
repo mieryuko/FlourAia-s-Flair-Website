@@ -1,116 +1,63 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    let currentIndex = 0;
+    // Initialize slider if it exists
     const slides = document.querySelectorAll('.wrapper');
-    const totalSlides = slides.length;
-
-    
-    if (totalSlides === 0) {
-        console.error('No slides found!');
-        return; 
-    }
-
-    
-    function showSlides() {
-        const slider = document.querySelector('.slider');
+    if (slides.length > 0) {
+        let currentIndex = 0;
+        const totalSlides = slides.length;
         
-        
-        if (currentIndex === totalSlides) {
-            slider.style.transition = 'none'; 
-            currentIndex = 0; 
-            slider.style.transform = `translateX(0vw)`; 
-
+        function showSlides() {
+            const slider = document.querySelector('.slider');
+            if (!slider) return;
             
-            setTimeout(() => {
-                slider.style.transition = 'transform 0.5s ease'; 
-            }, 20); 
-        } else {
-            const offset = -currentIndex * 100;     
-            slider.style.transform = `translateX(${offset}vw)`; 
-        }
-
-        
-        currentIndex++;
-        if (currentIndex > totalSlides) {
-            currentIndex = totalSlides; 
-        }
-    }
-
-    
-    setInterval(showSlides, 1000); 
-    showSlides(); 
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const openOverlayBtns = document.querySelectorAll(".openOverlay");
-    const overlays = document.querySelectorAll(".overlay");
-    const closeBtns = document.querySelectorAll(".close-btn");
-    const counters = {};
-
-    openOverlayBtns.forEach(button => {
-        button.addEventListener("click", function() {
-            const overlayId = this.getAttribute("data-overlay");
-            overlays.forEach(overlay => overlay.style.display = "none"); 
-            const overlay = document.getElementById(overlayId);
-            overlay.style.display = "block"; 
-            counters[overlayId] = 1;
-            updateCounterDisplay(overlayId);
-            setupColorPicker(overlay); 
-        });
-    });
-
-    closeBtns.forEach(closeBtn => {
-        closeBtn.addEventListener("click", function() {
-            const overlay = this.closest(".overlay");
-            overlay.style.display = "none"; 
-        });
-    });
-
-    overlays.forEach(overlay => {
-        overlay.addEventListener("click", function(event) {
-            if (event.target === overlay) {
-                overlay.style.display = "none"; 
+            if (currentIndex === totalSlides) {
+                slider.style.transition = 'none';
+                currentIndex = 0;
+                slider.style.transform = `translateX(0vw)`;
+                
+                setTimeout(() => {
+                    slider.style.transition = 'transform 0.5s ease';
+                }, 20);
+            } else {
+                const offset = -currentIndex * 100;
+                slider.style.transform = `translateX(${offset}vw)`;
             }
-        });
-
-        const incrementBtn = overlay.querySelector("#incrementBtn");
-        const decrementBtn = overlay.querySelector("#decrementBtn");
-        const overlayId = overlay.id;
-
-        if (incrementBtn) {
-            incrementBtn.addEventListener('click', () => {
-                counters[overlayId]++;
-                updateCounterDisplay(overlayId);
-            });
+            
+            currentIndex++;
+            if (currentIndex > totalSlides) {
+                currentIndex = totalSlides;
+            }
         }
-
-        if (decrementBtn) {
-            decrementBtn.addEventListener('click', () => {
-                if (counters[overlayId] > 1) {
-                    counters[overlayId]--;
-                    updateCounterDisplay(overlayId);
-                }
-            });
-        }
-    });
-
-    function updateCounterDisplay(overlayId) {
-        const counterValue = document.getElementById(overlayId).querySelector("#counterValue");
-        if (counterValue) {
-            counterValue.textContent = counters[overlayId];
-        }
+        
+        setInterval(showSlides, 1000);
+        showSlides();
     }
-
-});
-
-document.addEventListener('DOMContentLoaded', function() {
     const openOverlayBtns = document.querySelectorAll(".openOverlay");
     const overlays = document.querySelectorAll(".overlay");
     const closeBtns = document.querySelectorAll(".close-btn");
-    const counters = {}; 
-
+const counters = {};
     
+    // Initialize counter values for each overlay
+    document.querySelectorAll('.overlay').forEach(overlay => {
+        counters[overlay.id] = 1;
+    });
+
+    // Handle increment/decrement buttons
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('incrementBtn') || event.target.classList.contains('decrementBtn')) {
+            const overlay = event.target.closest('.overlay');
+            const counter = overlay.querySelector('.counterValue');
+            const currentValue = parseInt(counter.textContent);
+            
+            if (event.target.classList.contains('incrementBtn')) {
+                counter.textContent = currentValue + 1;
+                counters[overlay.id] = currentValue + 1;
+            } else if (currentValue > 1) {
+                counter.textContent = currentValue - 1;
+                counters[overlay.id] = currentValue - 1;
+            }
+        }
+    });
+
     function isBuildYourBoxOverlay(overlay) {
         return overlay.dataset.isBuildYourBox === 'true' ||  overlay.dataset.browniecategory === 'true'; 
     }
@@ -275,53 +222,37 @@ document.addEventListener('DOMContentLoaded', function() {
         return colorDropdownDiv;
     }
     
-    function updateCartTable() {
+function updateCartTable() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const cartTableBody = document.getElementById('cartTableBody');
         const totalAmount = document.getElementById('totalAmount');
-    
+        
+        if (!cartTableBody || !totalAmount) return;
         
         cartTableBody.innerHTML = '';
-    
-        
         let total = 0;
+
         cart.forEach((item, index) => {
-            item.subTotal = item.price * item.quantity; 
+            item.subTotal = item.price * item.quantity;
             const row = document.createElement('tr');
-    
             
-            let buildYourBoxText = '';
-            if (item.isBuildYourBox && Array.isArray(item.flavors) && item.flavors.length > 0) {
-                buildYourBoxText = `
-                    <br>
-                    <div class="detailsButton">
+            const buildYourBoxText = `
+                <br>
+                <div class="detailsButton">
                     <button class="toggle-flavors" data-index="${index}">Details</button>
-                    </div>
-                    <div class="buildYourBoxText">
+                </div>
+                <div class="buildYourBoxText">
                     <div class="flavors-list" style="overflow: hidden" data-index="${index}">
                         ${item.flavors.map(flavor => `<div class="flavor">${flavor}</div>`).join('')}
                     </div>
-                    </div>
-                `;
-            }else{
-                buildYourBoxText = `
-                    <br>
-                    <div class="detailsButton">
-                    <button class="toggle-flavors" data-index="${index}">Details</button>
-                    </div>
-                    <div class="buildYourBoxText">
-                    <div class="flavors-list" style="overflow: hidden" data-index="${index}">
-                        ${item.flavors.map(flavor => `<div class="flavor">${flavor}</div>`).join('')}
-                    </div>
-                    </div>
-                `;
-            }
+                </div>
+            `;
     
             row.innerHTML = `
                 <td>
                     <label class="custom-checkbox">
                         <input type="checkbox" class="item-checkbox" data-index="${index}">
-                        <span></span> <!-- This span will act as the custom checkbox -->
+                        <span></span>
                     </label>
                 </td>                
                 <td class='itemImg'><img src="${item.imgSrc}" alt="${item.name}" style="width: 100px; height: auto;"></td>
@@ -335,58 +266,57 @@ document.addEventListener('DOMContentLoaded', function() {
                 <td><button class="remove-item" data-index="${index}">Remove</button></td>
             `;
 
-            
             const checkbox = row.querySelector('.item-checkbox');
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    total += item.subTotal; 
-                } else {
-                    total -= item.subTotal; 
+            if (checkbox) {
+                checkbox.checked = item.isChecked || false;
+                checkbox.addEventListener('change', function() {
+                    item.isChecked = this.checked;
+                    if (this.checked) {
+                        total += item.subTotal;
+                    } else {
+                        total -= item.subTotal;
+                    }
+                    totalAmount.textContent = `₱${total.toFixed(2)}`;
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                });
+
+                // If item is checked, add to total
+                if (item.isChecked) {
+                    total += item.subTotal;
                 }
-                totalAmount.textContent = `₱${total.toFixed(2)}`; 
-            });
+            }
             
             cartTableBody.appendChild(row);
         });
-    
-        
-    
-document.querySelectorAll('.toggle-flavors').forEach(button => {
-    button.addEventListener('click', function() {
-        const index = this.getAttribute('data-index');
-        const flavorsList = document.querySelector(`.flavors-list[data-index="${index}"]`);
-        
-        if (flavorsList) {
-            if (flavorsList.style.maxHeight) {
+
+        // Update total amount
+        totalAmount.textContent = `₱${total.toFixed(2)}`;
+
+        // Add event listeners for the toggle-flavors buttons
+        document.querySelectorAll('.toggle-flavors').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                const flavorsList = document.querySelector(`.flavors-list[data-index="${index}"]`);
                 
-                flavorsList.style.maxHeight = null;
-                flavorsList.style.opacity = 0;
-                flavorsList.style.overflow = 'hidden'; 
-                this.textContent = 'Details'; 
-            } else {
-                
-                flavorsList.style.maxHeight = '500px'; 
-                flavorsList.style.opacity = 1;
-                flavorsList.style.overflow = 'visible'; 
-                this.textContent = 'Hide'; 
-            }
-        } else {
-            console.error(`Flavors list not found for index: ${index}`);
-        }
-    });
-});
-        
-        const checkbox = row.querySelector('.item-checkbox');
-        checkbox.addEventListener('change', function() {
-            if (this.checked) {
-                total += item.subTotal; 
-            } else {
-                total -= item.subTotal; 
-            }
-            totalAmount.textContent = `₱${total.toFixed(2)}`; 
+                if (flavorsList) {
+                    if (flavorsList.style.maxHeight) {
+                        flavorsList.style.maxHeight = null;
+                        flavorsList.style.opacity = 0;
+                        flavorsList.style.overflow = 'hidden';
+                        this.textContent = 'Details';
+                    } else {
+                        flavorsList.style.maxHeight = '500px';
+                        flavorsList.style.opacity = 1;
+                        flavorsList.style.overflow = 'visible';
+                        this.textContent = 'Hide';
+                    }
+                }
+            });
         });
     
-        totalAmount.textContent = `₱${total.toFixed(2)}`;
+        
+    
+
     }
 
 
@@ -481,12 +411,37 @@ document.querySelectorAll('.toggle-flavors').forEach(button => {
     }
 
     
-    document.addEventListener('click', function(event) {
-        if (event.target.classList.contains('remove-item')) {
-            const index = event.target.getAttribute('data-index');
-            removeItemFromCart(index); 
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('remove-item')) {
+        const index = event.target.getAttribute('data-index');
+        removeItemFromCart(index); 
+    }
+});
+
+// Add event listener for the checkout button
+document.querySelector('.payment-btn')?.addEventListener('click', function() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const checkedItems = [];
+    
+    // Get all checked items
+    document.querySelectorAll('.item-checkbox').forEach((checkbox, index) => {
+        if (checkbox.checked) {
+            const item = cart[index];
+            item.isChecked = true;
+            checkedItems.push(item);
         }
     });
+    
+    // Save checked items to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Redirect to orderinfo page if items are selected
+    if (checkedItems.length > 0) {
+        window.location.href = 'orderinfo.html';
+    } else {
+        alert('Please select items to checkout');
+    }
+});
 
     
     document.addEventListener('click', function(event) {
