@@ -266,9 +266,28 @@ body::-webkit-scrollbar-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  box-shadow: inset 0 0 0 2000px rgba(248, 235, 211, 0.75);
+}
+.quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/imgs/quote_bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  z-index: -1;
 }
 .quote-text{
-  font-size: 3rem;
+  font-size: 2rem;
+  font-style: italic;
+  color: #152c18;
+  font-weight: bold;
 }
 
 /*FAQ*/
