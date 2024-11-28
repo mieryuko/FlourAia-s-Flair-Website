@@ -32,10 +32,8 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    max-width: 80vw; 
+    max-width: 70vw; 
     max-height: 80vh; 
- 
-    padding: 30px 10%; 
     width: 100%; 
 }
 
@@ -50,7 +48,7 @@ body {
     display: flex;
     align-items: flex-start;
     flex-direction: row;
-    background-color: #bf8fa4;
+    background-color: #9F505F;
     align-items: center;
     justify-content: center;
     width: 15vw;
@@ -60,7 +58,7 @@ body {
 
 }
 .continueShopping span{
-    color: #152C18;
+    color: #F8EBD3;
     filter: brightness(1);
     font-weight: bold;
     font-size: 1em;
@@ -296,22 +294,20 @@ a:visited{
 }
 
 
-
-
-
 @media (max-width: 768px) {
     .continueShopping{
         display: flex;
         align-items: center;
         flex-direction: column;
-        width: 25vw;
+        width: auto;
+        font-size: 1em;
     }
 
     .cart-table {
         display: block; 
         overflow-x: auto; 
         align-items: center;
-        background-color: #9F505F;
+        background-color: #F8EBD3;
     }
 
     .cart-table thead {
@@ -328,12 +324,13 @@ a:visited{
         display: flex; 
         flex-direction: column; 
         margin-bottom: 10px; 
-        border: 10px double #F8EBD3; 
+        border-bottom: 2px solid #9F505F; 
         padding: 10px; 
         justify-content: center;
         align-items: center;
-        width: 85vw;
+        width: 65vw;
         min-width: 40vw;
+        overflow-x: hidden;
     }
 
     .cart-table td {
@@ -350,10 +347,17 @@ a:visited{
     }
 
     .text-right{
-        color: #F8EBD3;
+        color: #9F505F;
+        display: flex;
+        flex-direction: column;
+        color: #152C18;
     }
     
-.payment-btn {
+    .buildYourBoxText{
+        min-width: 250%;
+    }
+
+    .payment-btn {
         font-size: .6em;
         width: 25vw;
     }

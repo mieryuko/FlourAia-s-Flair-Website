@@ -157,8 +157,8 @@ a {
   color: #F8EBD3; 
   border-radius: 20px;
   margin: 40px auto;
-  /*overflow-y: auto;
-  max-height: 80vh;*/
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 /* Selection Styles */
@@ -452,4 +452,27 @@ a {
   font-size: 14px;
   color: #152C18;
   margin-bottom: 0;
+}
+
+@media (max-width: 780px){
+  .categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gourmet{
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px){
+  .categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
