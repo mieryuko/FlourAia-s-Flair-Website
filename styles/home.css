@@ -419,11 +419,14 @@ body::-webkit-scrollbar-button {
   align-content: center;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 0;
 }
 
 .category-text.faq-text{
   text-align: center;
   position: relative;
+  margin-bottom: 20px;
   z-index: 0;
 }
 
@@ -434,7 +437,7 @@ body::-webkit-scrollbar-button {
 }
 
 .faq-content{
-  max-width: 80%;
+  max-width: 70%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -450,6 +453,10 @@ body::-webkit-scrollbar-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 10px;
+
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
 }
 
 .answer {
@@ -458,7 +465,7 @@ body::-webkit-scrollbar-button {
   opacity: 0;
   overflow: hidden;
   padding-left: 20px;
-  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: max-height 250ms ease-in-out, opacity 0.15s ease-in-out;
   font-weight: 500;
 }
 .answer.active {
@@ -469,7 +476,7 @@ body::-webkit-scrollbar-button {
 
 .question:hover{
   background-color:#803b3b;
-  .chevron,.question-text{
+  .chevron, .question-text{
     color:#f8ebd3;
   }
 }
@@ -538,5 +545,46 @@ body::-webkit-scrollbar-button {
   .view{
     font-size: 15px;
     margin: 30px 0 30px 0;
+  }
+
+  .bs-options{
+    gap: 20px;
+  }
+
+  .best-seller-text{
+    font-size: 16px;
+    row-gap: 60px;
+  }
+
+  .bs-option-img{
+    width: 90px;
+  }
+
+  .bs-name{
+    font-size: 13px;
+  }
+
+  .bs-description{
+    font-size: 12px;
+  }
+
+  .category-text{
+    font-size: 16px;
+  }
+
+  .explore-menu{
+    font-size: 13px;
+  }
+
+  .options{
+    font-size: 14px;
+  }
+
+  .question-text{
+    font-size: 15px;
+  }
+
+  .answer{
+    font-size: 13px;
   }
 }

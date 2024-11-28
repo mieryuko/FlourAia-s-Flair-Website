@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        setInterval(showSlides, 1000);
+        setInterval(showSlides, 2000);
         showSlides();
     }
     const openOverlayBtns = document.querySelectorAll(".openOverlay");

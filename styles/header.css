@@ -87,4 +87,14 @@
   .nav-options nav ul li a{
     font-size: 12px;
   }
+
+  .nav-options nav ul li{
+    margin: 0 15px;
+  }
+}
+
+@media(max-width: 390px){
+  .nav-options nav ul li{
+    margin: 0 18px;
+  }
 }
