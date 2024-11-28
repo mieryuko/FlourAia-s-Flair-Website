@@ -128,7 +128,7 @@ body::-webkit-scrollbar-button {
   z-index: 0;
 }
 
-.decorative-left, .decorative-right {
+.decorative-left, .decorative-right, .deco-cookie, .deco-brownie {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -140,14 +140,24 @@ body::-webkit-scrollbar-button {
   z-index:-1; 
 }
 
-.decorative-left {
+.decorative-left{
   left: 0;
   background-image: url('../imgs/left.png'); /* Replace with your decorative image */
 }
 
-.decorative-right {
+.deco-cookie{
+  left: 0;
+  background-image: url('../imgs/deco-cookie.png'); /* Replace with your decorative image */
+}
+
+.decorative-right{
   right: 0;
   background-image: url('../imgs/right.png'); /* Replace with your decorative image */
+}
+
+.deco-brownie{
+  right: 0;
+  background-image: url('../imgs/deco-brownie.png'); /* Replace with your decorative image */
 }
 
 .best-seller-text{
@@ -166,7 +176,7 @@ body::-webkit-scrollbar-button {
 .best-seller-options{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:start;
   align-content: center;
   justify-content: center;
 }
@@ -386,8 +396,13 @@ body::-webkit-scrollbar-button {
   display: flex;
   flex-direction: column;
   text-align: left;
+  align-items: center;
+  align-content: center;
   justify-content: center;
+  position: relative;
+  z-index: 0;
 }
+
 
 .questions * {
   font-family: "PlayfairDisplay";
