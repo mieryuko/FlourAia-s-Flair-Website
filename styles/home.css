@@ -326,17 +326,17 @@ body::-webkit-scrollbar-button {
 }
 
 .answer {
-  height: 0;
+  height: auto;
+  max-height: 0;
   opacity: 0;
   overflow: hidden;
   padding-left: 20px;
-  transition: height 0.3s ease;
-  transition: opacity 0.3s ease;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
   font-weight: 500;
 }
 .answer.active {
-  height: auto;
   opacity: 100;
+  max-height: 1000px;
   padding: 20px;
 }
 
@@ -349,7 +349,7 @@ body::-webkit-scrollbar-button {
 
 .chevron{
   display: inline-block;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 .chevron.rotate{
   transform: rotate(-180deg);
