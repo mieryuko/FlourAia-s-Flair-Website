@@ -17,6 +17,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!--STYLES-->
     <link rel="stylesheet" href="styles/header.css" />
@@ -147,62 +150,49 @@
       <!--FAQ-->
       <section class="faq">
         <div class="category-text" id="faq">Frequently Asked Questions</div>
-        <div class="questions">
-          <ol>
-            <li class="question">
-              Do you have a physical store?
-              <button class="question-btn" onclick="toggleTab(this)">
-                <span class="chevron">&#9660;</span>
-              </button>
-              <div class="answer">
-                No, FlourAia's Flair is a small, home-based business. But we are
-                hoping to expand on the idea at the soonest.
-              </div>
-            </li>
-            <li class="question">
-              Do you accept Cash on Delivery (COD)?
-              <button class="question-btn" onclick="toggleTab(this)">
-                <span class="chevron">&#9660;</span>
-              </button>
-              <div class="answer">
-                Yes we do, especially for self pick-up orders. However, we ask
-                that you follow our downpayment policy.
-              </div>
-            </li>
-            <li class="question">
-              Do you accept custom designs/orders?
-              <button class="question-btn" onclick="toggleTab(this)">
-                <span class="chevron">&#9660;</span>
-              </button>
-              <div class="answer">
-                Yes, we do! You can customize the cookie boxes, cookie pouches,
-                cake designs, and flavors (Build a Box). However, certain
-                limitations are applied. Please contact us for further details!
-              </div>
-            </li>
-            <li class="question">
-              Do you accept rush orders?
-              <button class="question-btn" onclick="toggleTab(this)">
-                <span class="chevron">&#9660;</span>
-              </button>
-              <div class="answer">
-                Yes, we accept 1-2 rushed orders at a time, but customers are
-                adviced to place their orders in advance. This is because the
-                baker's availability is limited.
-              </div>
-            </li>
-            <li class="question">
-              Are the prices indicated in your menu are the prices for all your
-              cakes?
-              <button class="question-btn" onclick="toggleTab(this)">
-                <span class="chevron">&#9660;</span>
-              </button>
-              <div class="answer">
-                The prices listed are the base prices. Additional charges may
-                apply in customized orders.
-              </div>
-            </li>
-          </ol>
+        <div class="faq-content">
+          <div class="question" onclick="toggleTab(this)">
+            <span class="question-text">Do you have a physical store?</span>
+            <span class="chevron">&#9660;</span>
+          </div>
+          <div class="answer">
+            No, FlourAia's Flair is a small, home-based business. But we are hoping to expand on the idea at the soonest.
+          </div>
+          <div class="question" onclick="toggleTab(this)">
+            <span class="question-text">Do you accept Cash on Delivery (COD)?</span>
+            <span class="chevron">&#9660;</span>
+          </div>
+          <div class="answer">
+            Yes we do, especially for self pick-up orders. However, we ask
+            that you follow our downpayment policy.
+          </div>
+          <div class="question" onclick="toggleTab(this)">
+            <span class="question-text">Do you accept custom designs/orders?</span>
+            <span class="chevron">&#9660;</span>
+          </div>
+          <div class="answer">
+            Yes, we do! You can customize the cookie boxes, cookie pouches,
+            cake designs, and flavors (Build a Box). However, certain
+            limitations are applied. Please contact us for further details!
+          </div>
+          <div class="question" onclick="toggleTab(this)">
+            <span class="question-text">Do you accept rush orders?</span>
+            <span class="chevron">&#9660;</span>
+          </div>
+          <div class="answer">
+            Yes, we accept 1-2 rushed orders at a time, but customers are
+            adviced to place their orders in advance. This is because the
+            baker's availability is limited.
+          </div>
+          <div class="question" onclick="toggleTab(this)">
+            <span class="question-text">Are the prices indicated in your menu the same as the prices for all your
+            cakes?</span>
+            <span class="chevron">&#9660;</span>
+          </div>
+          <div class="answer">
+            No, the prices listed are the base prices. Additional charges may
+            apply in customized orders.
+          </div>
         </div>
       </section>
     </div>

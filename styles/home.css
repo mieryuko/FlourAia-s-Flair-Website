@@ -280,7 +280,7 @@ body::-webkit-scrollbar-button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 1;
+  opacity: 0.75 ;
   z-index: -1;
 }
 .quote-text{
@@ -298,59 +298,60 @@ body::-webkit-scrollbar-button {
   flex-direction: column;
   text-align: left;
   justify-content: center;
+  align-items: center;
 }
 
-.questions * {
-  font-family: "PlayfairDisplay";
+.faq-content * {
   color: #803b3b;
   font-size: 1.3rem;
+  font-family: "Poppins";
 }
 
-.questions li {
-  list-style: decimal;
+.faq-content{
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  text-align: left;
+}
+
+.question {
   font-size: 1.7rem;
   font-weight: 700;
   padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 }
 
-.questions ol {
-  padding: 50px;
-}
-.questions .answer {
+.answer {
   height: 0;
   opacity: 0;
   overflow: hidden;
   padding-left: 20px;
   transition: height 0.3s ease;
   transition: opacity 0.3s ease;
+  font-weight: 500;
 }
 .answer.active {
   height: auto;
   opacity: 100;
-  padding-top: 20px;
-}
-.question-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 2.3rem;
-  font-size: 1.2rem;
-  align-items: center;
-  padding: 5px;
+  padding: 20px;
 }
 
-.question-btn:hover{
+.question:hover{
   background-color:#803b3b;
-  .chevron{
+  .chevron,.question-text{
     color:#f8ebd3;
   }
 }
 
-.question-btn .chevron{
-  display: block;
+.chevron{
+  display: inline-block;
   transition: transform 0.3s ease;
 }
-.question-btn .chevron.rotate{
+.chevron.rotate{
   transform: rotate(-180deg);
 }
 
